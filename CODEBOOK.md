@@ -32,6 +32,8 @@ The set of variables that were estimated from these signals are:
 mean(): Mean value
 std(): Standard deviation
 
+So tidydata.csv containes 10299 obs. of 81 var.
+
 **act** is a vector of activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
 **sub** is a vector of subject (1..30)
 
@@ -39,3 +41,4 @@ The complete list of variables of each feature vector is available in 'features.
 
 ### avgdata.csv
 The data for this database uses the same variables, but its contain the average of each variable for each activity and each subject of tidydata.csv.
+avgdata.csv containes 180 obs. (6 activities * 30 subjects) and 82 var.
