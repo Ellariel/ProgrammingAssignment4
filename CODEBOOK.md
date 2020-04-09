@@ -47,4 +47,4 @@ The complete list of variables of each feature vector is available in 'features.
 
 ### avgdata.csv
 The data for this database uses the same variables, but its contain the average of each variable for each activity and each subject of tidydata.csv.
-avgdata.csv containes 180 obs. (6 activities * 30 subjects) and 82 var.
+avgdata.csv containes 180 obs. (6 activities * 30 subjects) and 81 var.
