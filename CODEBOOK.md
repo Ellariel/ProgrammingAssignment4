@@ -29,13 +29,19 @@ fBodyGyroMag
 fBodyGyroJerkMag
 
 The set of variables that were estimated from these signals are: 
+
 mean(): Mean value
+
 std(): Standard deviation
+
 
 So tidydata.csv containes 10299 obs. of 81 var.
 
+
 **act** is a vector of activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING)
+
 **sub** is a vector of subject (1..30)
+
 
 The complete list of variables of each feature vector is available in 'features.txt'
 
