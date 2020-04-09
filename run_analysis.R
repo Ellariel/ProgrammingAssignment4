@@ -6,9 +6,9 @@
 ##Appropriately labels the data set with descriptive variable names.
 ##From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-library(data.table)
-
 run_analysis <- function(dir = "UCI HAR Dataset") {
+  
+  library(data.table)
   
   ##dir <- ##SET "UCI HAR Dataset" DIR
   
@@ -47,24 +47,16 @@ run_analysis <- function(dir = "UCI HAR Dataset") {
   ##make average data
   ##creating a second, independent tidy data set with the average of each variable for each activity and each subject
   
-  ## make script and run it - not so elegant :(
-  tmp<-"avgdata<-tidydata[, .("
-  write(tmp, file="tmp.R", append = F)
-  maxcol<-ncol(tidydata)-2
-  tmp<-paste0("`",names(tidydata)[1:maxcol],"`=mean(`",names(tidydata)[1:maxcol],"`),")
-  tmp[maxcol]<-substr(tmp[maxcol],1,nchar(tmp[maxcol])-1)
-  write(tmp, file="tmp.R", append = T)
-  tmp<-"), by=.(act, sub)]"
-  write(tmp, file="tmp.R", append = T)
+  library(dplyr)
   
-  source("tmp.R", local = T)
-
+  avgdata <- tidydata %>%
+    group_by(sub, act) %>%
+      summarise_all(mean)
+  
   write.csv(avgdata,"avgdata.csv", row.names = F) ## save average data of activities and subjects ~ 180 obs (6 act * 30 sub) and 82 vars
-
   
-  ##write.table(avgdata,"avgdata.txt",row.names = F) ##just for coursera work
+  write.table(avgdata,"avgdata.txt",row.names = F) ##just for coursera work
 
-  
   remove(avgdata, tidydata)
   
 }
