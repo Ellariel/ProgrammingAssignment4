@@ -60,8 +60,10 @@ run_analysis <- function(dir = "UCI HAR Dataset") {
   source("tmp.R", local = T)
 
   write.csv(avgdata,"avgdata.csv", row.names = F) ## save average data of activities and subjects ~ 180 obs (6 act * 30 sub) and 82 vars
+
   
   ##write.table(avgdata,"avgdata.txt",row.names = F) ##just for coursera work
+
   
   remove(avgdata, tidydata)
   
