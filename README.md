@@ -18,8 +18,8 @@ run_analysis <- function(dir = "UCI HAR Dataset") { .....
 ```
 
 After executing that script you can find two data sets in the R-project directory:
-1. tidydata.csv
-2. avgdata.csv
+1. tidydata.csv (10299 obs. of 81 var.)
+2. avgdata.csv (180 obs. (6 activities * 30 subjects) and 82 var.)
 
 The first one is only the measurements on the mean and standard deviation for each measurement extracted from UCI HAR Dataset.
 The second one is an independent tidy data set with the average of each variable for each activity and each subject.
