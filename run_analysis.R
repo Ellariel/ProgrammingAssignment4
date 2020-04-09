@@ -40,7 +40,7 @@ run_analysis <- function(dir = "UCI HAR Dataset") {
   al <- read.table(paste0(dir,"\\activity_labels.txt")) ##get labels of activities
   tidydata[,act:=al[act,][,2]]  ## change num of activity to name
   
-  write.csv(tidydata,"tidydata.csv")  ##save tidy data set
+  write.csv(tidydata,"tidydata.csv", row.names = F)  ##save tidy data set
   
   remove(xtt, xtr, fs, dtt, dtr, ttact, ttsub, tract, trsub, al)
   
@@ -59,7 +59,9 @@ run_analysis <- function(dir = "UCI HAR Dataset") {
   
   source("tmp.R", local = T)
 
-  write.csv(avgdata,"avgdata.csv") ## save average data of activities and subjects ~ 180 obs (6 act * 30 sub) and 82 vars
+  write.csv(avgdata,"avgdata.csv", row.names = F) ## save average data of activities and subjects ~ 180 obs (6 act * 30 sub) and 82 vars
+  
+  ##write.table(avgdata,"avgdata.txt",row.names = F) ##just for coursera work
   
   remove(avgdata, tidydata)
   
